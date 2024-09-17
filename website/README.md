@@ -27,11 +27,13 @@
     ```commandline
       php artisan key:generate
     ```
-- Create database and config .env file
-- Init SQL from file database.sql
-- Add domain masiweb.th trong openserver
+- Create database and config `.env` file
+- Init SQL from file `masi_db.sql`
+- Add domain `masiweb.th` trong openserver
 - Clear cache
     ```commandline
       php artisan optimize
     ```
+## 2. Documents:
+- Admin theme: https://github.com/HuyHoang2358/Frontend_Templates/tree/main/Enigma%20v1.0.5
       
