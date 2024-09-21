@@ -26,6 +26,14 @@
             </a>
         </li>
         <li>
+            <a href="{{ route('admin.size') }}" class="side-menu {{$page == 'size' ? 'side-menu--active' : ''}}">
+                <div class="side-menu__icon"> <i data-lucide="scissors"></i> </div>
+                <div class="side-menu__title">
+                    Quản lý kich thước
+                </div>
+            </a>
+        </li>
+        <li>
             <a href="{{ route('admin.text_editor') }}" class="side-menu {{$page == 'media' ? 'side-menu--active' : ''}}">
                 <div class="side-menu__icon"> <i data-lucide="hard-drive"></i> </div>
                 <div class="side-menu__title"> File Manager </div>

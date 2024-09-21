@@ -68,6 +68,7 @@
     <!-- BEGIN: Content -->
     <div class="content">
         @yield('text-area')
+        @yield('size-management')
     </div>
     <!-- END: Content -->
 </div>

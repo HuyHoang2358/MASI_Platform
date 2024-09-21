@@ -17,6 +17,7 @@ Route::namespace('admin')->group(function () {
         Route::get('/text_editor', function(){
             return view('admin.texteditor', ['page' => 'media']);
         })->name('admin.text_editor');
+        Route::get('/size_management', [AdminController::class, 'size_management'])->name('admin.size');
     });
 
 });
