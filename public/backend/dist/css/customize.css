@@ -1,0 +1,4 @@
+#tabulator {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+}

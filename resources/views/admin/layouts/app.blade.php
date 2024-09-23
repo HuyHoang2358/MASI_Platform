@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link href="{{asset('backend/dist/images/logo.svg')}}" rel="shortcut icon">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Enigma admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Enigma Admin Template, dashboard template, flat admin template, responsive admin template, web app">
@@ -55,6 +56,7 @@
     <!--end tinyMCE + lfm-->
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="{{asset('backend/dist/css/app.css')}}" />
+    {{-- <link rel="stylesheet" href="{{asset('backend/dist/css/customize.css')}}" /> --}}
     <!-- END: CSS Assets-->
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
@@ -63,10 +65,13 @@
 @include('admin.partials.mobileMenu')
 @include('admin.partials.topMenu')
 
-<div class="flex overflow-hidden">
+<div id='app' class="flex overflow-hidden">
     @include('admin.partials.sidebar')
     <!-- BEGIN: Content -->
     <div class="content">
+        @include('admin.partials.addSizeForm')
+        @include('admin.partials.updateSizeForm')
+        @include('admin.partials.deleteSizeForm')
         @yield('text-area')
         @yield('size-management')
     </div>

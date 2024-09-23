@@ -17,7 +17,15 @@ Route::namespace('admin')->group(function () {
         Route::get('/text_editor', function(){
             return view('admin.texteditor', ['page' => 'media']);
         })->name('admin.text_editor');
-        Route::get('/size_management', [AdminController::class, 'size_management'])->name('admin.size');
+        Route::prefix('size_management')->group(function () {
+            Route::get('/', [AdminController::class, 'size_management'])->name('admin.size');
+            // size filter
+            Route::get('/get', [AdminController::class, 'get_size'])->name('admin.size.get');
+            // add, update, remove size
+            Route::post('/add', [AdminController::class, 'add_size'])->name('admin.size.add');
+            Route::post('/update', [AdminController::class, 'update_size'])->name('admin.size.update');
+            Route::post('/delete', [AdminController::class, 'delete_size'])->name('admin.size.delete');
+        });
     });
 
 });
