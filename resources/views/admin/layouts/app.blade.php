@@ -56,6 +56,8 @@
     <!--end tinyMCE + lfm-->
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="{{asset('backend/dist/css/app.css')}}" />
+    <script src="https://kit.fontawesome.com/bf7b127d49.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {{-- <link rel="stylesheet" href="{{asset('backend/dist/css/customize.css')}}" /> --}}
     <!-- END: CSS Assets-->
     @vite(['resources/css/app.css','resources/js/app.js'])
@@ -69,11 +71,9 @@
     @include('admin.partials.sidebar')
     <!-- BEGIN: Content -->
     <div class="content">
-        @include('admin.partials.addSizeForm')
-        @include('admin.partials.updateSizeForm')
-        @include('admin.partials.deleteSizeForm')
         @yield('text-area')
         @yield('size-management')
+        @yield('category-management')
     </div>
     <!-- END: Content -->
 </div>

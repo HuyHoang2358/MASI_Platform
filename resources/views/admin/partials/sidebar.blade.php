@@ -10,11 +10,29 @@
                 </div>
             </a>
         </li>
+
         <li>
-            <a href="#" class="side-menu {{$page == 'category' ? 'side-menu--active' : ''}}">
-                <div class="side-menu__icon"> <i data-lucide="list"></i> </div>
-                <div class="side-menu__title"> Danh mục </div>
+            <a href="javascript:" class="side-menu {{$page == 'setting' ? 'side-menu--active' : ''}}">
+                <div class="side-menu__icon"> <i data-lucide="folder"></i> </div>
+                <div class="side-menu__title">
+                    Danh mục
+                    <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
+                </div>
             </a>
+            <ul class="">
+                <li>
+                    <a href="{{ route('admin.category', ['type' => 'product-cate']) }}" class="side-menu {{$page == 'product-cate' ? 'side-menu--active' : ''}}">
+                        <div class="side-menu__icon"> <i data-lucide="align-justify"></i> </div>
+                        <div class="side-menu__title"> Danh mục sản phẩm</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.category', ['type' => 'post-cate']) }}" class="side-menu {{$page == 'post-cate' ? 'side-menu--active' : ''}}">
+                        <div class="side-menu__icon"> <i data-lucide="align-justify"></i> </div>
+                        <div class="side-menu__title"> Danh mục bài viết</div>
+                    </a>
+                </li>
+            </ul>
         </li>
 
         <li>
