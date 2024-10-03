@@ -1,6 +1,11 @@
 @extends('admin.layouts.app')
 
 @section('size-management')
+
+    @include('admin.partials.addSizeForm')
+    @include('admin.partials.updateSizeForm')
+    @include('admin.partials.deleteSizeAlert')
+
     @if (Session::has('success'))
         <div class="alert alert-success alert-dismissible show flex items-center mb-2 fixed right-60" role="alert" style="z-index: 9999; top: 6.75rem;">
             <i data-lucide="alert-triangle" class="w-6 h-6 mr-2"></i> {{ Session::get('success') }}
@@ -23,7 +28,7 @@
     </div>
     @endif
 
-    <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
+    <div class="intro-y flex flex-col sm:flex-row items-center mt-8">   
         <h2 class="text-lg font-medium mr-auto">
             Quản lý kích thước
         </h2>

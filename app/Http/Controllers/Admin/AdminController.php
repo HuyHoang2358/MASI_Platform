@@ -42,7 +42,10 @@ class AdminController extends Controller
                     }
                 }
             }
+
         }
+
+        //dd($request->all());
 
         $data = $query->paginate($pageSize);
 
