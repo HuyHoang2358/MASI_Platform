@@ -25,7 +25,7 @@
         </td>
     </tr>
     @if (count($category->children))
-        @include('admin.partials.row_table', [
+        @include('admin.partials.category.row_table', [
             'categories' => $category->children,
             'level' => $level + 1,
             'is_show' => false,

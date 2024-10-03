@@ -1,8 +1,8 @@
 @extends('admin.layouts.app')
 @section('category-management')
-    @include('admin.partials.addCategoryForm')
-    @include('admin.partials.deleteCategoryAlert')
-    @include('admin.partials.updateCategoryForm')
+    @include('admin.partials.category.addCategoryForm')
+    @include('admin.partials.category.deleteCategoryAlert')
+    @include('admin.partials.category.updateCategoryForm')
 
     @if (Session::has('success'))
         <div class="alert alert-success alert-dismissible show flex items-center mb-2 fixed right-60" role="alert" style="z-index: 9999; top: 6.75rem;">
@@ -58,9 +58,15 @@
                 </tr>
             </thead>
             <tbody>
+                @if(count($categories) > 0)
                 <tr>
-                    @include("admin.partials.row_table",["categories"=>$categories, "level"=>0, "is_show"=>True])
+                    @include("admin.partials.category.row_table",["categories"=>$categories, "level"=>0, "is_show"=>True])
                 </tr>
+                @else
+                    <tr>
+                        <td colspan="6" class="text-center">Không có danh mục nào</td>
+                    </tr>
+                @endif
             </tbody>
         </table>
     </div>

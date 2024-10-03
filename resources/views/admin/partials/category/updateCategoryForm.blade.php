@@ -1,20 +1,20 @@
-<form action="{{ route('admin.category.add') }}" method="POST" id="add-category-form" class="modal" tabindex="-1" aria-hidden="true">
-    @csrf
+<form action="{{ route('admin.category.update') }}" method="POST" id="update-category-form" class="modal" tabindex="-1" aria-hidden="true">
+	@csrf
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- BEGIN: Modal Header -->
             <div class="modal-header">
                 <h2 class="font-medium text-base mr-auto">
-                    Thêm danh mục mới
+                    Chỉnh sửa danh mục
                 </h2>
             </div>
             <!-- END: Modal Header -->
             <!-- BEGIN: Modal Body -->
             <div class="modal-body flex flex-col gap-2">
+                <input id="id" name="id" class="form-control" type="hidden">
                 <div class="col-span-12 sm:col-span-6">
-                    <label for="name" class="form-label">Tên danh mục</label>
-                    <input required id="name" name="name" type="text" class="form-control"
-                        placeholder="Nhập tên danh mục">
+                    <label for="name" class="form-label">Tên Danh mục</label>
+                    <input id="name" name="name" type="text" class="form-control" placeholder="Nhập tên danh mục">
                 </div>
                 <div class="col-span-12 sm:col-span-6">
                     <label for="slug" class="form-label">Slug</label>
@@ -32,7 +32,7 @@
                         <option value="">Không có danh mục cha</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
-                            @include('admin.partials.category_option', [
+                            @include('admin.partials.category.category_option', [
                                 'categories' => $category->children,
                                 'level' => 1,
                             ])
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-span-12 sm:col-span-6">
                     <label for="cate_type" class="cate_type">Loại danh mục</label>
-                    <select id="cate_type" name="cate_type" class="form-control">
+                    <select id="cate_type" name="type" class="form-control">
                         <option value="product-cate">Danh mục sản phẩm</option>
                         <option value="post-cate">Danh mục bài viết</option>
                     </select>
@@ -63,8 +63,6 @@
                 <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Hủy</button>
                 <button type="submit" class="btn w-fit btn-primary">Xác nhận</button>
             </div>
-            <!-- END: Modal Footer -->
         </div>
     </div>
 </form>
-

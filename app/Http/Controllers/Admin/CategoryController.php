@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index($type)
     {
         //
-        $categories = Category::where('parent_id', null)->get();
+        $categories = Category::where('parent_id', null)->where('type', $type)->get();
         return view('admin.category_management', ['page' => $type, 'categories' => $categories]);
     }
 
@@ -32,6 +32,8 @@ class CategoryController extends Controller
                 'parent_id' => $request->input('parent_id'),
                 'type' => $request->input('cate_type')
             ]);
+
+            dd($request->all());
 
             // Flash success message
             Session::flash('success', 'Thêm danh mục thành công!');
@@ -79,7 +81,7 @@ class CategoryController extends Controller
             $category = Category::findOrFail($request->input('id'));
 
             // Get the input data
-            $input = $request->only(['name', 'icon', 'slug', 'parent_id', 'description']);
+            $input = $request->only(['name', 'icon', 'slug', 'parent_id', 'description', 'type']);
 
             $descendants = $this->getAllDescendants($category->id);
 

@@ -15,6 +15,7 @@ class Category extends Model
         'parent_id',
         'icon',
         'description',
+        'type'
     ];
     
     public function parent()

@@ -2,9 +2,9 @@
 
 @section('size-management')
 
-    @include('admin.partials.addSizeForm')
-    @include('admin.partials.updateSizeForm')
-    @include('admin.partials.deleteSizeAlert')
+    @include('admin.partials.size.addSizeForm')
+    @include('admin.partials.size.updateSizeForm')
+    @include('admin.partials.size.deleteSizeAlert')
 
     @if (Session::has('success'))
         <div class="alert alert-success alert-dismissible show flex items-center mb-2 fixed right-60" role="alert" style="z-index: 9999; top: 6.75rem;">

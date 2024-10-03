@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\SizeController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\Auth\RegisterController;
@@ -19,13 +20,13 @@ Route::namespace('admin')->group(function () {
             return view('admin.texteditor', ['page' => 'media']);
         })->name('admin.text_editor');
         Route::prefix('size_management')->group(function () {
-            Route::get('/', [AdminController::class, 'size_management'])->name('admin.size');
+            Route::get('/', [SizeController::class, 'size_management'])->name('admin.size');
             // size filter
-            Route::get('/get', [AdminController::class, 'get_size'])->name('admin.size.get');
+            Route::get('/get', [SizeController::class, 'get_size'])->name('admin.size.get');
             // add, update, remove size
-            Route::post('/add', [AdminController::class, 'add_size'])->name('admin.size.add');
-            Route::post('/update', [AdminController::class, 'update_size'])->name('admin.size.update');
-            Route::post('/delete', [AdminController::class, 'delete_size'])->name('admin.size.delete');
+            Route::post('/add', [SizeController::class, 'add_size'])->name('admin.size.add');
+            Route::post('/update', [SizeController::class, 'update_size'])->name('admin.size.update');
+            Route::post('/delete', [SizeController::class, 'delete_size'])->name('admin.size.delete');
         });
 
         Route::prefix('category_management')->group(function () {
