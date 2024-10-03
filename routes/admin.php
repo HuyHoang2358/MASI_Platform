@@ -41,3 +41,4 @@ Route::namespace('admin')->group(function () {
     });
 
 });
+

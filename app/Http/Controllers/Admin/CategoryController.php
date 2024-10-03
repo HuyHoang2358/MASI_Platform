@@ -33,7 +33,7 @@ class CategoryController extends Controller
                 'type' => $request->input('cate_type')
             ]);
 
-            dd($request->all());
+            //dd($request->all());
 
             // Flash success message
             Session::flash('success', 'Thêm danh mục thành công!');

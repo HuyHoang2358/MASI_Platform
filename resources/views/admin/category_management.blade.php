@@ -51,7 +51,6 @@
                 <tr>
                     <th class="whitespace-nowrap">#</th>
                     <th class="whitespace-nowrap">Tên danh mục</th>
-                    <th class="whitespace-nowrap">Icon</th>
                     <th class="whitespace-nowrap">Slug</th>
                     <th class="whitespace-nowrap">Mô tả</th>
                     <th class="whitespace-nowrap">Hành động</th>
@@ -70,6 +69,12 @@
             </tbody>
         </table>
     </div>
+    <script src="{{ asset('/vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
+    <script>
+        var route_prefix = "/laravel-filemanager";
+        $('#lfm').filemanager('image', {prefix: route_prefix});
+        $('#lfm2').filemanager('image', {prefix: route_prefix});
+    </script>
 
     {{-- <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
         <h2 class="text-lg font-medium mr-auto">

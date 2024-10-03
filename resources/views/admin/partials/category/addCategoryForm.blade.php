@@ -1,4 +1,5 @@
-<form action="{{ route('admin.category.add') }}" method="POST" id="add-category-form" class="modal" tabindex="-1" aria-hidden="true">
+<form action="{{ route('admin.category.add') }}" method="POST" id="add-category-form" class="modal" tabindex="-1"
+    aria-hidden="true">
     @csrf
     <div class="modal-dialog">
         <div class="modal-content">
@@ -20,10 +21,6 @@
                     <label for="slug" class="form-label">Slug</label>
                     <div class="flex flex-col gap-2">
                         <input id="slug" name="slug" type="text" class="form-control" placeholder="Tạo slug">
-                        {{-- <div class="flex">
-                            <input type="checkbox" id="auto-generate-slug" class="ml-2">
-                            <label for="auto-generate-slug" class="ml-1">Tự động tạo</label>
-                        </div> --}}
                     </div>
                 </div>
                 <div class="col-span-12 sm:col-span-6">
@@ -39,11 +36,20 @@
                         @endforeach
                     </select>
                 </div>
+
                 <div class="col-span-12 sm:col-span-6">
                     <label for="icon" class="form-label">Biểu tượng</label>
-                    <input required id="icon" name="icon" type="text" class="form-control"
-                        placeholder="Tải ảnh biểu tượng">
+                    <div class="input-group flex gap-2">
+                        <span class="input-group-btn">
+                            <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                <i class="fa fa-picture-o"></i> Choose
+                            </a>
+                        </span>
+                        <input readonly id="thumbnail" class="form-control" type="text" name="icon">
+                    </div>
+                    <div id="holder" style="margin-top:15px;max-height:100px;"></div>
                 </div>
+                
                 <div class="col-span-12 sm:col-span-6">
                     <label for="cate_type" class="cate_type">Loại danh mục</label>
                     <select id="cate_type" name="cate_type" class="form-control">
@@ -67,4 +73,3 @@
         </div>
     </div>
 </form>
-

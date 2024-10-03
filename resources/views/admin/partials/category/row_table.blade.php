@@ -1,8 +1,7 @@
 @foreach ($categories as $category)
     <tr class="{{ $is_show ? 'table-row' : 'hidden' }} category-{{ $category->parent_id }}" data-id="{{ $category->id }}">
         <th class="text-center" scope="row">{{ $category->parent_id == null ? $loop->index + 1 : '' }}</th>
-        <td>{{ str_repeat('----', $level) }} {{ $category->name }}</td>
-        <td>{{ $category->icon }}</td>
+        <td class="flex gap-2 items-center">{{ str_repeat('----', $level) }} <img src="{{ $category->icon }}" alt="{{ $category->name }}_icon" width="32" height="32"> {{ $category->name }}</td>
         <td>{{ $category->slug }}</td>
         <td>{{ $category->description }}</td>
         <td>
@@ -13,7 +12,7 @@
                 </a>
 
                 <a class="mr-1">
-                    <button data-tw-toggle="modal" data-tw-target="#delete-category-form" type="button" class="btn btn-outline-dange" onclick="getCateForDelete('{{ $category->name }}', {{ $category->id }})"><i class="fa-solid fa-trash"></i></i></button>
+                    <button data-tw-toggle="modal" data-tw-target="#delete-category-form" type="button" class="btn btn-outline-danger" onclick="getCateForDelete('{{ $category->name }}', {{ $category->id }})"><i class="fa-solid fa-trash"></i></i></button>
                 </a>
 
                 @if (count($category->children))

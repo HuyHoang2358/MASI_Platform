@@ -39,11 +39,20 @@
                         @endforeach
                     </select>
                 </div>
+
                 <div class="col-span-12 sm:col-span-6">
                     <label for="icon" class="form-label">Biểu tượng</label>
-                    <input required id="icon" name="icon" type="text" class="form-control"
-                        placeholder="Tải ảnh biểu tượng">
+                    <div class="input-group flex gap-2">
+                        <span class="input-group-btn">
+                            <a id="lfm2" data-input="icon" data-preview="holder" class="btn btn-primary">
+                                <i class="fa fa-picture-o"></i> Choose
+                            </a>
+                        </span>
+                        <input readonly id="icon" class="form-control" type="text" name="icon">
+                    </div>
+                    <div id="holder" style="margin-top:15px;max-height:100px;"></div>
                 </div>
+                
                 <div class="col-span-12 sm:col-span-6">
                     <label for="cate_type" class="cate_type">Loại danh mục</label>
                     <select id="cate_type" name="type" class="form-control">
@@ -66,3 +75,4 @@
         </div>
     </div>
 </form>
+
