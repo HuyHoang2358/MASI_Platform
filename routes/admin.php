@@ -1,10 +1,16 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\SizeController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\Auth\LoginController;
-use App\Http\Controllers\Admin\Auth\RegisterController;
+use App\Http\Controllers\Admin\{
+    AdminController,
+    SizeController,
+    CategoryController,
+    PostController
+};
+use App\Http\Controllers\Admin\Auth\{
+    LoginController,
+    RegisterController
+};
+
 use Illuminate\Support\Facades\Route;
 
 Route::namespace('admin')->group(function () {
@@ -36,6 +42,14 @@ Route::namespace('admin')->group(function () {
             Route::post('/add', [CategoryController::class, 'add_category'])->name('admin.category.add');
             Route::post('/update', [CategoryController::class, 'update_category'])->name('admin.category.update');
             Route::post('/delete', [CategoryController::class, 'delete_category'])->name('admin.category.delete');
+        });
+
+        Route::prefix('post_management')->group(function () {
+            Route::get('/{type}', [PostController::class, 'index'])->name('admin.post');
+            Route::get('/posts/add', [PostController::class, 'create'])->name('admin.add');
+            Route::post('/posts/store', [PostController::class, 'store'])->name('admin.store');
+            Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('admin.edit');
+            Route::post('/posts/update', [PostController::class, 'update'])->name('admin.update');
         });
 
     });

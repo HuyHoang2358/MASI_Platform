@@ -42,7 +42,7 @@
                     <div class="input-group flex gap-2">
                         <span class="input-group-btn">
                             <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                                <i class="fa fa-picture-o"></i> Choose
+                                <i class="fa fa-picture-o"></i> Chọn
                             </a>
                         </span>
                         <input readonly id="thumbnail" class="form-control" type="text" name="icon">

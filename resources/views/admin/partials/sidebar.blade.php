@@ -59,10 +59,27 @@
         </li>
 
         <li>
-            <a href="#" class="side-menu {{$page == 'post' ? 'side-menu--active' : ''}}">
-                <div class="side-menu__icon"> <i data-lucide="file-text"></i> </div>
-                <div class="side-menu__title"> Bài viết </div>
+            <a href="javascript:" class="side-menu {{$page == 'setting' ? 'side-menu--active' : ''}}">
+                <div class="side-menu__icon"> <i data-lucide="folder"></i> </div>
+                <div class="side-menu__title">
+                    Bài viết
+                    <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
+                </div>
             </a>
+            <ul class="">
+                <li>
+                    <a href="{{ route('admin.post', ['type' => 'news-post']) }}" class="side-menu {{$page == 'news-post' ? 'side-menu--active' : ''}}">
+                        <div class="side-menu__icon"> <i data-lucide="align-justify"></i> </div>
+                        <div class="side-menu__title"> Bài viết tin tức</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.post', ['type' => 'product-post']) }}" class="side-menu {{$page == 'product-post' ? 'side-menu--active' : ''}}">
+                        <div class="side-menu__icon"> <i data-lucide="align-justify"></i> </div>
+                        <div class="side-menu__title"> Bài viết sản phẩm</div>
+                    </a>
+                </li>
+            </ul>
         </li>
 
         <li>
