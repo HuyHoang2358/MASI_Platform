@@ -1,5 +1,6 @@
 <form action="{{ route('admin.size.update') }}" method="POST" id="update-size-form" class="modal" tabindex="-1" aria-hidden="true">
 	@csrf
+    @method('PUT')
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- BEGIN: Modal Header -->

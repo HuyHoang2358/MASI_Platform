@@ -174,8 +174,39 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
         //
+        $id = $request->input('del-post-id');
+    
+        DB::beginTransaction();
+
+        try {
+            $news = News::with(['post.seo'])->findOrFail($id);
+
+            // Delete the related SEO instance
+            $seo = $news->post->seo;
+            if ($seo) {
+                $seo->delete();
+            }
+
+            // Delete the related Post instance
+            $post = $news->post;
+            if ($post) {
+                $post->delete();
+            }
+
+            // Delete the News instance
+            $news->delete();
+
+            DB::commit();
+
+            return redirect()->route('admin.post', ['type' => 'news-post'])->with('success', 'Xóa bài viết thành công.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            return redirect()->route('admin.post', ['type' => 'news-post'])->with('error', 'Xóa bài viết thất bại. ' . $e->getMessage());
+        }
+
     }
 }

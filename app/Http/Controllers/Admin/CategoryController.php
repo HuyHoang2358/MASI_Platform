@@ -20,7 +20,7 @@ class CategoryController extends Controller
         return view('admin.category_management', ['page' => $type, 'categories' => $categories]);
     }
 
-    public function add_category(Request $request){
+    public function store(Request $request){
 
         try {
             // Create a new category record
@@ -47,7 +47,7 @@ class CategoryController extends Controller
 
     }
 
-    public function delete_category(Request $request){
+    public function destroy(Request $request){
 
         try {
             
@@ -74,7 +74,7 @@ class CategoryController extends Controller
 
     }
 
-    public function update_category(Request $request){
+    public function update(Request $request){
 
         try {
             // Find the size record by ID

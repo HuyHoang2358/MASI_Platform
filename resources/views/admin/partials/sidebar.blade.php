@@ -21,13 +21,13 @@
             </a>
             <ul class="">
                 <li>
-                    <a href="{{ route('admin.category', ['type' => 'product-cate']) }}" class="side-menu {{$page == 'product-cate' ? 'side-menu--active' : ''}}">
+                    <a href="{{ route('admin.category.index', ['type' => 'product-cate']) }}" class="side-menu {{$page == 'product-cate' ? 'side-menu--active' : ''}}">
                         <div class="side-menu__icon"> <i data-lucide="align-justify"></i> </div>
                         <div class="side-menu__title"> Danh mục sản phẩm</div>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.category', ['type' => 'post-cate']) }}" class="side-menu {{$page == 'post-cate' ? 'side-menu--active' : ''}}">
+                    <a href="{{ route('admin.category.index', ['type' => 'post-cate']) }}" class="side-menu {{$page == 'post-cate' ? 'side-menu--active' : ''}}">
                         <div class="side-menu__icon"> <i data-lucide="align-justify"></i> </div>
                         <div class="side-menu__title"> Danh mục bài viết</div>
                     </a>
@@ -44,7 +44,7 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('admin.size') }}" class="side-menu {{$page == 'size' ? 'side-menu--active' : ''}}">
+            <a href="{{ route('admin.size.index') }}" class="side-menu {{$page == 'size' ? 'side-menu--active' : ''}}">
                 <div class="side-menu__icon"> <i data-lucide="scissors"></i> </div>
                 <div class="side-menu__title">
                     Quản lý kich thước
@@ -68,13 +68,13 @@
             </a>
             <ul class="">
                 <li>
-                    <a href="{{ route('admin.post', ['type' => 'news-post']) }}" class="side-menu {{$page == 'news-post' ? 'side-menu--active' : ''}}">
+                    <a href="{{ route('admin.post.index', ['type' => 'news-post']) }}" class="side-menu {{$page == 'news-post' ? 'side-menu--active' : ''}}">
                         <div class="side-menu__icon"> <i data-lucide="align-justify"></i> </div>
                         <div class="side-menu__title"> Bài viết tin tức</div>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.post', ['type' => 'product-post']) }}" class="side-menu {{$page == 'product-post' ? 'side-menu--active' : ''}}">
+                    <a href="{{ route('admin.post.index', ['type' => 'product-post']) }}" class="side-menu {{$page == 'product-post' ? 'side-menu--active' : ''}}">
                         <div class="side-menu__icon"> <i data-lucide="align-justify"></i> </div>
                         <div class="side-menu__title"> Bài viết sản phẩm</div>
                     </a>

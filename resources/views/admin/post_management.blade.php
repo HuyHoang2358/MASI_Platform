@@ -31,7 +31,7 @@
             <h2 class="text-lg font-medium my-auto">
                 Quản lý bài viết
             </h2>
-            <a href="{{ route('admin.add') }}" class="btn btn-primary shadow-md mr-2">
+            <a href="{{ route('admin.post.create') }}" class="btn btn-primary shadow-md mr-2">
                 Thêm bài viết mới
             </a>
         </div>
@@ -58,15 +58,15 @@
                             <td>{{ $post->category->name }}</td>
                             <td>
                                 <div class="">
-                                    <a href="{{ route('admin.edit', ['id' => $post->id]) }}" class="mr-1">
+                                    <a href="{{ route('admin.post.edit', ['id' => $post->id]) }}" class="mr-1">
                                         <button type="button" class="btn btn-outline-warning">
                                             <i class="fa-solid fa-pen-to-square"></i></i>
                                         <button>
                                     </a>
                     
                                     <a class="mr-1">
-                                        <button type="button" class="btn btn-outline-danger">
-                                            <i class="fa-solid fa-trash"></i></i>
+                                        <button data-tw-toggle="modal" data-tw-target="#delete-post-form" type="button" class="btn btn-outline-danger" onclick='getPostForDelete("{{ $post->title }}", {{ $post->id }})'>
+                                            <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </a>
                                 </div>
@@ -83,3 +83,12 @@
     </div>
 
 @endsection
+
+<script>
+
+    function getPostForDelete(name, id){
+            document.getElementById('del-post-name').textContent = name;
+            document.getElementById('del-post-id').value = id;
+    }
+
+</script>

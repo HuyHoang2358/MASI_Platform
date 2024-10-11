@@ -2,8 +2,9 @@
 
 @section('post-update')
 
-    <form method="POST" action="{{ route('admin.update') }}" class="overflow-x-auto flex flex-col mt-2">
+    <form method="POST" action="{{ route('admin.post.update') }}" class="overflow-x-auto flex flex-col mt-2">
         @csrf
+        @method('PUT')
         <input type="text" name="id" hidden value="{{ $news->id }}">
         <div class="flex justify-between my-5">
             <h2 class="text-lg font-medium my-auto">

@@ -1,4 +1,4 @@
-<form action="{{ route("admin.size.get") }}" method="POST" id="add-size-form" class="modal" tabindex="-1" aria-hidden="true">
+<form action="{{ route("admin.size.store") }}" method="POST" id="add-size-form" class="modal" tabindex="-1" aria-hidden="true">
 	@csrf
     <div class="modal-dialog">
         <div class="modal-content">

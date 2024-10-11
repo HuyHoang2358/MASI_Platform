@@ -1,5 +1,6 @@
-<form method="POST" action="{{ route('admin.category.delete') }}" id="delete-category-form" class="modal" tabindex="-1" aria-hidden="true">
+<form method="POST" action="{{ route('admin.category.destroy') }}" id="delete-category-form" class="modal" tabindex="-1" aria-hidden="true">
     @csrf
+    @method('DELETE')
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body p-0">

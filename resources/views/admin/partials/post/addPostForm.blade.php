@@ -2,7 +2,7 @@
 
 @section('post-add')
 
-    <form method="POST" action="{{ route('admin.store') }}" class="overflow-x-auto flex flex-col mt-2">
+    <form method="POST" action="{{ route('admin.post.store') }}" class="overflow-x-auto flex flex-col mt-2">
         @csrf
         <div class="flex justify-between my-5">
             <h2 class="text-lg font-medium my-auto">

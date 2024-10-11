@@ -1,4 +1,4 @@
-<form action="{{ route('admin.category.add') }}" method="POST" id="add-category-form" class="modal" tabindex="-1"
+<form action="{{ route('admin.category.store') }}" method="POST" id="add-category-form" class="modal" tabindex="-1"
     aria-hidden="true">
     @csrf
     <div class="modal-dialog">

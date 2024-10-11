@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Session;
 class SizeController extends Controller
 {
     //
-    public function size_management(){
+    public function index(){
         return view("admin.size_management", ['page' => 'size']);
     }
 
@@ -43,7 +43,7 @@ class SizeController extends Controller
         return response()->json(['last_page'=> $data->lastPage(), 'data' => $data->items()]);
     }
 
-    public function add_size(Request $request){
+    public function store(Request $request){
 
         try {
             // Create a new size record
@@ -68,7 +68,7 @@ class SizeController extends Controller
     }
 
 
-    public function update_size(Request $request){
+    public function update(Request $request){
 
         try {
             // Find the size record by ID
@@ -97,7 +97,7 @@ class SizeController extends Controller
 
     }
 
-    public function delete_size(Request $request){
+    public function destroy(Request $request){
 
         try {
             // Find the size record by ID

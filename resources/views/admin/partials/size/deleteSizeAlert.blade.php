@@ -1,5 +1,6 @@
-<form method="POST" action="{{ route('admin.size.delete') }}" id="delete-size-form" class="modal" tabindex="-1" aria-hidden="true">
+<form method="POST" action="{{ route('admin.size.destroy') }}" id="delete-size-form" class="modal" tabindex="-1" aria-hidden="true">
     @csrf
+    @method('DELETE')
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body p-0">
