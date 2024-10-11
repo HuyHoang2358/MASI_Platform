@@ -105,7 +105,7 @@
         <div class="mt-5">
             <div class="intro-y box">
                 <div class="p-3 flex justify-end">
-                    <button class="btn btn-secondary w-24 mr-1">Hủy</button>
+                    <a href="{{ route('admin.post.index', ['type' => 'news-post']) }}" onclick="return confirm('Bạn có chắc muốn hủy ? Mọi thay đổi sẽ không được lưu');"><button type="button" class="btn btn-secondary w-24 mr-1">Hủy</button></a>
                     <button type="submit" class="btn btn-primary w-24 mr-1">Lưu</button>
                 </div>
             </div>
