@@ -128,6 +128,7 @@
             @yield('size-management')
             @yield('category-management')
             @yield('post-management')
+            @yield('color-management')
             @yield('post-add')
             @yield('post-update')
         </div>

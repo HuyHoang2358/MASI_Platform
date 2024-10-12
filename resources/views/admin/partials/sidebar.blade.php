@@ -44,13 +44,23 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('admin.size.index') }}" class="side-menu {{$page == 'size' ? 'side-menu--active' : ''}}">
+            <a href="{{ route('admin.size.index') }}" class="side-menu {{$page == 'color' ? 'side-menu--active' : ''}}">
                 <div class="side-menu__icon"> <i data-lucide="scissors"></i> </div>
                 <div class="side-menu__title">
                     Quản lý kich thước
                 </div>
             </a>
         </li>
+
+        <li>
+            <a href="{{ route('admin.color.index') }}" class="side-menu {{$page == 'size' ? 'side-menu--active' : ''}}">
+                <div class="side-menu__icon"> <i data-lucide="scissors"></i> </div>
+                <div class="side-menu__title">
+                    Quản lý màu sắc
+                </div>
+            </a>
+        </li>
+
         <li>
             <a href="{{ route('admin.text_editor') }}" class="side-menu {{$page == 'media' ? 'side-menu--active' : ''}}">
                 <div class="side-menu__icon"> <i data-lucide="hard-drive"></i> </div>
@@ -81,6 +91,8 @@
                 </li>
             </ul>
         </li>
+
+        
 
         <li>
             <a href="#" class="side-menu {{$page == 'contact' ? 'side-menu--active' : ''}}">

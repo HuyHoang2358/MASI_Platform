@@ -4,7 +4,8 @@ use App\Http\Controllers\Admin\{
     AdminController,
     SizeController,
     CategoryController,
-    PostController
+    PostController,
+    ColorController
 };
 use App\Http\Controllers\Admin\Auth\{
     LoginController,
@@ -51,6 +52,13 @@ Route::namespace('admin')->group(function () {
             Route::get('/action/edit/{id}', [PostController::class, 'edit'])->name('admin.post.edit');
             Route::put('/action/update', [PostController::class, 'update'])->name('admin.post.update');
             Route::delete('/action/destroy', [PostController::class, 'destroy'])->name('admin.post.destroy');
+        });
+
+        Route::prefix('color_management')->group(function () {
+            Route::get('/', [ColorController::class, 'index'])->name('admin.color.index');
+            Route::post('/store', [ColorController::class, 'store'])->name('admin.color.store');
+            Route::put('/update', [ColorController::class, 'update'])->name('admin.color.update');
+            Route::delete('/update', [ColorController::class, 'destroy'])->name('admin.color.destroy');
         });
 
     });
