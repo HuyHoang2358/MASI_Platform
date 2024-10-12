@@ -1,8 +1,17 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\Auth\LoginController;
-use App\Http\Controllers\Admin\Auth\RegisterController;
+use App\Http\Controllers\Admin\{
+    AdminController,
+    SizeController,
+    CategoryController,
+    PostController,
+    ColorController
+};
+use App\Http\Controllers\Admin\Auth\{
+    LoginController,
+    RegisterController
+};
+
 use Illuminate\Support\Facades\Route;
 
 Route::namespace('admin')->group(function () {
@@ -18,14 +27,41 @@ Route::namespace('admin')->group(function () {
             return view('admin.texteditor', ['page' => 'media']);
         })->name('admin.text_editor');
         Route::prefix('size_management')->group(function () {
-            Route::get('/', [AdminController::class, 'size_management'])->name('admin.size');
+            Route::get('/', [SizeController::class, 'index'])->name('admin.size.index');
             // size filter
-            Route::get('/get', [AdminController::class, 'get_size'])->name('admin.size.get');
+            Route::get('/get', [SizeController::class, 'get_size'])->name('admin.size.get');
             // add, update, remove size
-            Route::post('/add', [AdminController::class, 'add_size'])->name('admin.size.add');
-            Route::post('/update', [AdminController::class, 'update_size'])->name('admin.size.update');
-            Route::post('/delete', [AdminController::class, 'delete_size'])->name('admin.size.delete');
+            Route::post('/store', [SizeController::class, 'store'])->name('admin.size.store');
+            Route::put('/update', [SizeController::class, 'update'])->name('admin.size.update');
+            Route::delete('/destroy', [SizeController::class, 'destroy'])->name('admin.size.destroy');
         });
+
+        Route::prefix('category_management')->group(function () {
+            Route::get('/{type}', [CategoryController::class, 'index'])->name('admin.category.index');
+            //get records by tabulator ajax
+            // Route::get('/get/{type}', [CategoryController::class, 'get_category'])->name('admin.category.get');
+            Route::post('/store', [CategoryController::class, 'store'])->name('admin.category.store');
+            Route::put('/update', [CategoryController::class, 'update'])->name('admin.category.update');
+            Route::delete('/destroy', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
+        });
+
+        Route::prefix('post_management')->group(function () {
+            Route::get('/{type}', [PostController::class, 'index'])->name('admin.post.index');
+            Route::get('/action/create', [PostController::class, 'create'])->name('admin.post.create');
+            Route::post('/action/store', [PostController::class, 'store'])->name('admin.post.store');
+            Route::get('/action/edit/{id}', [PostController::class, 'edit'])->name('admin.post.edit');
+            Route::put('/action/update', [PostController::class, 'update'])->name('admin.post.update');
+            Route::delete('/action/destroy', [PostController::class, 'destroy'])->name('admin.post.destroy');
+        });
+
+        Route::prefix('color_management')->group(function () {
+            Route::get('/', [ColorController::class, 'index'])->name('admin.color.index');
+            Route::post('/store', [ColorController::class, 'store'])->name('admin.color.store');
+            Route::put('/update', [ColorController::class, 'update'])->name('admin.color.update');
+            Route::delete('/update', [ColorController::class, 'destroy'])->name('admin.color.destroy');
+        });
+
     });
 
 });
+
