@@ -32,7 +32,7 @@
                 <div class="-intro-x mt-5 text-lg text-white text-opacity-70 dark:text-slate-400">
                     Quản lý tất cả các tài khoản thương mại điện tử của bạn tại một nơi.
                 </div>
-            </div>
+            </div>ádfasf
         </div>
         <div class="h-screen xl:h-auto flex py-5 xl:py-0 my-10 xl:my-0">
             @yield('content')

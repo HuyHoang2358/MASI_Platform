@@ -46,7 +46,30 @@
             </a>
         </li>
 
-        <li class="side-nav__devider my-6"></li>
+        <li>
+            <a href="javascript:" class="side-menu {{$page == 'setting' ? 'side-menu--active' : ''}}">
+                <div class="side-menu__icon"><i class="fa-solid fa-ticket-simple text-2xl"></i></div>
+                <div class="side-menu__title">
+                    Voucher
+                    <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
+                </div>
+            </a>
+            <ul class="">
+                <li>
+                    <a href="{{route('voucher.index')}}" class="side-menu">
+                        <div class="side-menu__icon"> <i data-lucide="briefcase"></i> </div>
+                        <div class="side-menu__title">Voucher Table</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('voucher.add')}}" class="side-menu">
+                        <div class="side-menu__icon"> <i data-lucide="image"></i> </div>
+                        <div class="side-menu__title">Add Voucher</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
         <li>
             <a href="javascript:" class="side-menu {{$page == 'setting' ? 'side-menu--active' : ''}}">
                 <div class="side-menu__icon"> <i data-lucide="settings"></i> </div>
