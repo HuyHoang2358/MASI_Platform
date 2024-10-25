@@ -103,6 +103,11 @@
             toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         });
 
+        tinymce.init({
+            selector: '#product-description',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        });
+
         tinymce.init(editor_config);
     </script>
     <!--end tinyMCE + lfm-->
@@ -126,10 +131,13 @@
         <div class="content">
             @yield('text-area')
             @yield('size-management')
+            @yield('product-management')
             @yield('category-management')
             @yield('post-management')
             @yield('color-management')
             @yield('post-add')
+            @yield('product-add')
+            @yield('product-update')
             @yield('post-update')
         </div>
         <!-- END: Content -->

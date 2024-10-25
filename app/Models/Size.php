@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Product;
 
 class Size extends Model
 {
@@ -16,5 +17,10 @@ class Size extends Model
         'chest',
         'description',
     ];
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'product_size');
+    }
     
 }

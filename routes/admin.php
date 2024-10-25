@@ -5,7 +5,8 @@ use App\Http\Controllers\Admin\{
     SizeController,
     CategoryController,
     PostController,
-    ColorController
+    ColorController,
+    ProductController
 };
 use App\Http\Controllers\Admin\Auth\{
     LoginController,
@@ -58,7 +59,16 @@ Route::namespace('admin')->group(function () {
             Route::get('/', [ColorController::class, 'index'])->name('admin.color.index');
             Route::post('/store', [ColorController::class, 'store'])->name('admin.color.store');
             Route::put('/update', [ColorController::class, 'update'])->name('admin.color.update');
-            Route::delete('/update', [ColorController::class, 'destroy'])->name('admin.color.destroy');
+            Route::delete('/destroy', [ColorController::class, 'destroy'])->name('admin.color.destroy');
+        });
+
+        Route::prefix('product_management')->group(function () {    
+            Route::get('/', [ProductController::class, 'index'])->name('admin.product.index');
+            Route::get('/action/create', [ProductController::class, 'create'])->name('admin.product.create');
+            Route::post('/action/store', [ProductController::class, 'store'])->name('admin.product.store');
+            Route::get('/action/edit/{id}', [ProductController::class, 'edit'])->name('admin.product.edit');
+            Route::put('/action/update', [ProductController::class, 'update'])->name('admin.product.update');
+            Route::delete('/action/destroy', [ProductController::class, 'destroy'])->name('admin.product.delete');
         });
 
     });

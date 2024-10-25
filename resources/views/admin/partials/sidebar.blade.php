@@ -36,7 +36,7 @@
         </li>
 
         <li>
-            <a href="#" class="side-menu {{$page == 'product' ? 'side-menu--active' : ''}}">
+            <a href="{{ route('admin.product.index') }}" class="side-menu {{$page == 'product' ? 'side-menu--active' : ''}}">
                 <div class="side-menu__icon"> <i data-lucide="package"></i> </div>
                 <div class="side-menu__title">
                     Sản phẩm
@@ -44,7 +44,7 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('admin.size.index') }}" class="side-menu {{$page == 'color' ? 'side-menu--active' : ''}}">
+            <a href="{{ route('admin.size.index') }}" class="side-menu {{$page == 'size' ? 'side-menu--active' : ''}}">
                 <div class="side-menu__icon"> <i data-lucide="scissors"></i> </div>
                 <div class="side-menu__title">
                     Quản lý kich thước
@@ -53,7 +53,7 @@
         </li>
 
         <li>
-            <a href="{{ route('admin.color.index') }}" class="side-menu {{$page == 'size' ? 'side-menu--active' : ''}}">
+            <a href="{{ route('admin.color.index') }}" class="side-menu {{$page == 'color' ? 'side-menu--active' : ''}}">
                 <div class="side-menu__icon"> <i data-lucide="scissors"></i> </div>
                 <div class="side-menu__title">
                     Quản lý màu sắc
